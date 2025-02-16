@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title> Searching... </title>
+    <link rel="icon" type="image/x-icon" href="gajlogo.png">
+    <script>
+      function search() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+    <style>
+      #myInput {
+      background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+      background-position: 10px 12px; /* Position the search icon */
+      background-repeat: no-repeat; /* Do not repeat the icon image */
+      width: 100%; /* Full-width */
+      font-size: 16px; /* Increase font-size */
+      padding: 12px 20px 12px 40px; /* Add some padding */
+      border: 1px solid #ddd; /* Add a grey border */
+      margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    #myUL {
+      /* Remove default list styling */
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #myUL li a {
+      border: 1px solid #ddd; /* Add a border to all links */
+      margin-top: -1px; /* Prevent double borders */
+      background-color: #f6f6f6; /* Grey background color */
+      padding: 12px; /* Add some padding */
+      text-decoration: none; /* Remove default text underline */
+      font-size: 18px; /* Increase the font-size */
+      color: black; /* Add a black text color */
+      display: block; /* Make it into a block element to fill the whole list */
+    }
+
+    #myUL li a:hover:not(.header) {
+      background-color: #eee; /* Add a hover effect to all links, except for headers */
+    }
+    p {
+      color: dimgray;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1> <img src="gajlogo.png" height="100" width="100"><span class="orange">MC2</span>.....<a href="Home.html">Home</a>.....<a href="AOC.html">About Our Club</a>.....<a href="FYS.html">Find Your School</a>.....<a href="Our_Staff.html">Our Staff</a>.....<a href="curriculums.html">Curriculums</a><a href="search.html"><img style="float: right;" src="search.jpg" height="100" width="100" onclick=""></a></h1>
+    </div>
+    <input type="text" style="max-width: inherit;" id="myInput" onkeyup="search()" placeholder="Search...">
+    <h2>FAQ</h2>
+    <ul style="background-color: white;" id="myUL">
+      <li><a href="AOC.html" style="color: black;">Who is the creater of coding club<p>Jack Kelly</p></a></li>
+      <li><a href="AOC.html" style="color: black;">How did the club get created<p>Jack started the club</p></a></li>
+      <li><a href="AOC.html" style="color: black;">Who is in the club<p>Students at Oscar Mayer</p></a></li>
+      <li><a href="AOC.html" style="color: black;">Who is in charge<p>Jack Kelly</p></a></li>
+      <li><a href="AOC.html" style="color: black;">How oftin do you meet<p>Evey Tuesday</p></a></li>
+      <li><a href="AOC.html" style="color: black;">What level of expirience do you have to have to join<p>Whatever level is fine we are an intro club</p></a></li>
+      <li><a href="AOC.html" style="color: black;">What does a normal day look like<p>First we get our chromebooks then we do an assignment next we put our chromebooks away lastly we do dismisal</p></a></li>
+      <li><a href="AOC.html" style="color: black;">How can I use this website<p>You can use this website to find information about the club</p></a></li>
+      <li><a href="AOC.html" style="color: black;">Why is coding imortant<p>Coding is important becuase we use it to program divices and robots to help make our lives easier</p></a></li>
+      <li><a href="AOC.html" style="color: black;">Why do I need to learn coding<p>You do not need to learn but it is fun and there are so many posibilities</p></a></li>
+      <li><a href="AOC.html" style="color: black;">Is this club free<p>Yes</p></a></li>
+      <li><a href="AOC.html" style="color: black;">How do I sign up<p>You can sign up on the oscar mayer form sent out to all parents of students going to oscar mayer</p></a></li>
+      <li><a href="AOC.html" style="color: black;">How do I get to the staff site<p>You can get to the staff site by going to our staff then click the log in link finally log in and click the link called "click here to submit and view website"</p></a></li>
+    </ul>
+    <div class="footer" style="align-content: left;">
+        <h3>
+        MC2 </br>
+        Pages: </br>
+        <a href="Home.html">Home</a>
+        <a href="AOC.html">About our club</a></br>
+        <a href="FYS.html">Find your school</a></br>
+        <a href="Our_Staff.html">Our Staff</a></br>
+        <a href="curriculums.html">Curriculums</a></br>
+        &#169;, MC2 2025
+        </h3>
+      </div>
+    </body>
+    </html>
