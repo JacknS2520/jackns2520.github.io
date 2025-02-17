@@ -1,72 +1,72 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <link rel="stylesheet" href="style.css">
-      <title> Login - 122232 </title>
-      <link rel="icon" type="image/x-icon" href="gajlogo.png">
-        <script>
-          function checkUsername() {
-          var username = document.getElementById("usernameBox");
-          var usernameText = username.value;
-          if(usernameText == "Jack-Kelly") {
-            return true;
-          }
-          else if(usernameText == "Nicole-Aubry") {
-            return true;
-          }
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title> Login - 122232 </title>
+    <link rel="icon" type="image/x-icon" href="gajlogo.png">
+    <script>
+      const users = {
+        "Jack-Kelly": {
+          password: "022116",
+          redirect: "db87e8qegdbhj3iq839etg7dbeye7e1y9eh8d31hvnce9yene1y.html"
+        },
+        "Nicole-Aubry": {
+          password: "MC2_Starter_Password",
+          redirect: "143678838yhuid8eyh7eghudf3876f7h8fv3fr73gyyr8h3rh138.html"
+        }
+      };
+
+      function checkCredentials() {
+        const username = document.getElementById("usernameBox").value;
+        const password = document.getElementById("passwordBox").value;
+
+        if (users[username] && users[username].password === password) {
+          window.location.href = users[username].redirect;
+          return true;
+        } else {
           alert("Access denied! Incorrect password or username!");
           return false;
-          }
-          function checkPassword() {
-          var password = document.getElementById("passwordBox");
-          var passwordText = password.value;
-          if(passwordText == "022116") {
-            return true;
-          }
-          else if(passwordText == "MC2_Starter_Password") {
-            return true;
-          }
-          alert("Access denied! Incorrect password or username!");
-          return false;
-          }
-          function checklink() {
-            if(usernameText == "Jack-Kelly")(passwordText == "Creater-of-MCTWO"); {
-              {window.location.href = "db87e8qegdbhj3iq839etg7dbeye7e1y9eh8d31hvnce9yene1y.html";}
-            }
-            else if(usernameText == "Nicole-Aubry")(passwordText == "122232"); {
-                {window.location.href = "143678838yhuid8eyh7eghudf3876f7h8fv3fr73gyyr8h3rh138.html";}
-                return true;
-            }
-            return false;
-          }
-          function showPassword() {
-            var x = document.getElementById("passwordBox");
-            if (x.type === "password") {
-              x.type = "text";
-            } else {
-              x.type = "password";
-            }
-          }
-        </script>
-    </head>
-    <body>
-      <div class="header">
-        <h1> <img src="gajlogo.png" height="100" width="100"><span class="orange">MC2</span> .....<a href="Home.html">Home</a>.....<a href="AOC.html">About Our Club</a>.....<a href="FYS.html">Find Your School</a>.....<a href="Our_Staff.html">Our Staff</a>.....<a href="curriculums.html">Curriculums</a><a href="search.html"><img style="float: right;" src="search.jpg" height="100" width="100" onclick=""></a></h1>
-      </div>
-      </div style="float: center;">
-      <div style="align-content: center;"
-        <img src="coding-4.jpg" height="500px" width="100%" alt="Image of MC2 students coding"/>
-        <p style="font-size: 30pt;">MC2 LOG-IN FOR Jack Kelly</p>
-        <p>Please enter the password to view this website.</p>
-        <p>Username:<input id="usernameBox" type="text"/></p>
-        <p>Password:<input id="passwordBox" type="password"/></p>
-        <p>Show Password<input type="checkbox" onclick="return showPassword()"></p>
-        <button onclick="return checkUsername(); return checkPassword(); return checklink();">Sign-in</button>
-        Click here to submit password and view website
+        }
+      }
+
+      function showPassword() {
+        const x = document.getElementById("passwordBox");
+        x.type = x.type === "password" ? "text" : "password";
+      }
+    </script>
+    <style>
+      .centered-div {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header centered-div">
+      <h1>
+        <img src="gajlogo.png" height="100" width="100">
+        <span class="orange">MC2</span>
+        .....<a href="index.html">Home</a>.....
+        <a href="AOC.html">About Our Club</a>.....
+        <a href="FYS.html">Find Your School</a>.....
+        <a href="Our_Staff.html">Our Staff</a>.....
+        <a href="curriculums.html">Curriculums</a>
+        <a href="search.html">
+          <img style="float: right;" src="search.jpg" height="100" width="100" onclick="">
         </a>
-        <br>
-        <br>
-      </div>
+      </h1>
+    </div>
+    <div style="align-content: center;">
+      <img src="coding-4.jpg" height="500px" width="100%" alt="Image of MC2 students coding"/>
+      <p style="font-size: 30pt;">MC2 LOG-IN FOR Jack Kelly</p>
+      <p>Please enter the password to view this website.</p>
+      <p>Username:<input id="usernameBox" type="text"/></p>
+      <p>Password:<input id="passwordBox" type="password"/></p>
+      <p>Show Password<input type="checkbox" onclick="showPassword()"></p>
+      <button onclick="checkCredentials()">Sign-in</button>
+      Click here to submit password and view website
+      <br><br>
     </div>
   </body>
 </html>
