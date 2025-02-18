@@ -50,7 +50,7 @@ app.post('/signup', (req, res) => {
     if (err) throw err;
     db.query(query, [username, hash, email, school], (err, results) => {
       if (err) throw err;
-      res.redirect('/');
+      res.redirect('/Home.students.html');
     });
   });
   console.log(`Username: ${username}, Password: ${password}, Email: ${email}, School: ${school}`);
