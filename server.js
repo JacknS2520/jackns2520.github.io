@@ -31,7 +31,7 @@ app.post('/login', (req, res) => {
       const user = results[0];
       bcrypt.compare(password, user.password, (err, result) => {
         if (result) {
-          res.redirect('/dashboard.html');
+          res.redirect('/Home.students.html');
         } else {
           res.send('Incorrect username or password');
         }
