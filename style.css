@@ -9,10 +9,21 @@ body {
     color: transparent;
   }
   .header {
+    position: relative;
     height: 150px;
     width: 100%;
     background-color: rgb(50, 50, 50);
     align-content: center;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color: blue;
+    z-index: -1;
   }
   .button {
     color: gray;
