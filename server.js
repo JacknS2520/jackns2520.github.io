@@ -19,11 +19,11 @@ db.connect((err) => {
   console.log('Connected to database');
 });
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, school } = req.body;
   const query = 'SELECT * FROM users WHERE username = ?';
   db.query(query, [username], (err, results) => {
     if (err) throw err;
@@ -40,6 +40,7 @@ app.post('/login', (req, res) => {
       res.send('Incorrect username or password');
     }
   });
+  console.log(`Username: ${username}, Password: ${password}, School: ${school}`);
 });
 
 app.post('/signup', (req, res) => {
@@ -55,5 +56,5 @@ app.post('/signup', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running at http://localhost:${port}/`);
 });
