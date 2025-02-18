@@ -44,15 +44,16 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-  const { username, password, email } = req.body;
-  const query = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
+  const { username, password, email, school } = req.body;
+  const query = 'INSERT INTO users (username, password, email, school) VALUES (?, ?, ?, ?)';
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) throw err;
-    db.query(query, [username, hash, email], (err, results) => {
+    db.query(query, [username, hash, email, school], (err, results) => {
       if (err) throw err;
       res.redirect('/');
     });
   });
+  console.log(`Username: ${username}, Password: ${password}, Email: ${email}, School: ${school}`);
 });
 
 app.listen(port, () => {
