@@ -4,13 +4,28 @@
     <link rel="stylesheet" href="style.css">
     <title> MC2 - Home </title>
     <link rel="icon" type="image/x-icon" href="gajlogo.png">
-    <meta charset=”UTF-8″>
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
-    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   </head>
   <body>
     <div class="header">
-      <h1> <img src="gajlogo.png" height="100" width="100"><span class="orange">MC2</span> .....<a href="AOC.html">About Our Club</a>.....<a href="FYS.html">Find Your School</a>.....<a href="Our_Staff.html">Our Staff</a>.....<a href="curriculums.html">Curriculums</a><a href="search.html"><img style="float: right;" src="search.jpg" height="7%" width="6%" onclick=""></a></h1>
+      <h1>
+        <img src="gajlogo.png" height="100" width="100">
+        <span class="orange">MC2</span>
+        .....<a href="AOC.html">About Our Club</a>.....
+        <a href="FYS.html">Find Your School</a>.....
+        <a href="Our_Staff.html">Our Staff</a>.....
+        <a href="curriculums.html">Curriculums</a>
+        <a href="search.html">
+          <img style="float: right;" src="search.jpg" height="7%" width="6%" onclick="">
+        </a>
+      </h1>
+      <form action="/login" method="POST" style="float: right;">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
     </div>
     <img src="kidscoding-1.jpg" height="500px" width="100%" alt="Image of MC2 students coding"/>
     <h2>The MC2 stands for mayer coding club. Oscar Mayer is a public school in Chicago Illinois. The MC2 is trying to spread the club to other Chicago Public Schools (CPS). The MC2 teaches kids how to code if you are currently looking for a coding program for
